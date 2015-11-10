@@ -5,7 +5,7 @@ import java.util.Random;
 public class SavingsAccount 
 {
 	private Random generator = new Random();
-	private double balance;
+	private double balancee;
 	private double rate;
 	private long accountNr;
 	private String description;

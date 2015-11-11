@@ -1,10 +1,10 @@
-package projekt;
+package BankAccount;
 
 import java.util.ArrayList;
 
 public class Customer {
 	private ArrayList<SavingsAccount>accounts;
-	private String name;
+	private static String name;
 	private long pNr;
 	
 	public Customer(String name, long pNr, ArrayList<SavingsAccount> accounts){
@@ -13,15 +13,15 @@ public class Customer {
 		this.accounts = accounts;
 	}
 	
-	public void setName(String name){
-		this.name = name;
+	public static void setName(String name){
+		name = name;
 	}
-	public String getName(){
+	public static String getName(){
 		return name;
 		
 	}
-	public void setPrsNbr(long pNr){
-		this.pNr = pNr;
+	public static void setPrsNbr(long pNr){
+		pNr = pNr;
 	}
 	public long pNr(){
 		return pNr;

@@ -31,8 +31,10 @@ public class BankLogic {
             if (pNr == customer.pNr()) {
                 String info = customer.getName() + " " + customer.pNr();
                 infoList.add(info);
+                ArrayList<SavingsAccount> accounts = customer.getAccounts();
                 for (int i = 0; i < customer.getAccounts().size(); i++) {
-                    
+                    SavingsAccount account = accounts.get(i);
+                    infoList.add(account.getBalance() + " " + account.getRate() + " " + account.getAccountNr());
                 }
 
             }
@@ -40,5 +42,3 @@ public class BankLogic {
         return infoList;
     }
 }
-
-

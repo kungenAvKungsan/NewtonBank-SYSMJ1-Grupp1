@@ -24,4 +24,21 @@ public class BankLogic {
             customers.add(newCust);
             return true;
         }
+
+    public ArrayList<String> getCustomer(long pNr) {
+        ArrayList<String> infoList = new ArrayList<>();
+        for (Customer customer : customers) {
+            if (pNr == customer.pNr()) {
+                String info = customer.getName() + " " + customer.pNr();
+                infoList.add(info);
+                for (int i = 0; i < customer.getAccounts().size(); i++) {
+                    
+                }
+
+            }
+        }
+        return infoList;
     }
+}
+
+

@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class BankLogicTest {
     @Test
-    public void ChangeCustomerName() {
+    public void TestingEverything() {
         BankLogic bl = new BankLogic();
         bl.addCustomer("Viktor", 123);
         assertTrue(bl.getCustomer(123) != null);

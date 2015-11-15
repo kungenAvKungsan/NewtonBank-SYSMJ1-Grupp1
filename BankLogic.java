@@ -57,7 +57,7 @@ public class BankLogic {
     public int addSavingsAccount(long pNr) {
         for (Customer customer : customers) {
             if (pNr == customer.pNr()) {
-                SavingsAccount addSavingsAccount = new SavingsAccount(0, 1.5, accountNumberCounter++, "Assgoblin");
+                SavingsAccount addSavingsAccount = new SavingsAccount(0, 1.5, accountNumberCounter++, "Sparkonto");
                 customer.addAccount(addSavingsAccount);
                 return addSavingsAccount.getAccountNr();
             }

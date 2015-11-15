@@ -3,37 +3,58 @@ package BankAccount;
 import java.util.ArrayList;
 
 public class Customer {
-	private ArrayList<SavingsAccount>accounts;
-	private static String name;
-	private static long pNr;
-	
-	public Customer(String name, long pNr, ArrayList<SavingsAccount> accounts){
-		Customer.name = name;
-		this.pNr = pNr;
-		this.accounts = accounts;
-	}
-	
-	public static void setName(String name){
-		name = Customer.name;
-	}
-	public static String getName(){
-		return name;
-		
-	}
-	public static void setPrsNbr(long pNr){
-		pNr = Customer.pNr;
-	}
-	public long pNr(){
-		return pNr;
-	}
-	public void setAccounts(ArrayList<SavingsAccount> accounts){
-		this.accounts = accounts;
-	}
-	public ArrayList<SavingsAccount> getAccounts(){
-		return accounts;	
-	}
-	public String toString(){
-		return ("Namn: " + name + "\n" + "Personnummer: " + pNr + "\n" + "Konton: " + accounts);
-	}
+    private ArrayList<SavingsAccount> accounts;
+    private String name;
+    private long pNr;
+
+    public Customer(String name, long pNr) {
+        this.name  = name;
+        this.pNr = pNr;
+        this.accounts = new ArrayList<>();
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setPrsNbr(long pNr){
+        this.pNr = pNr;
+    }
+
+    public long pNr(){
+        return pNr;
+    }
+    public void addAccount(SavingsAccount account){
+        this.accounts.add(account);
+    }
+    public ArrayList<SavingsAccount> getAccounts(){
+        return accounts;
+    }
+
+    public SavingsAccount getAccount(int accountNumber) {
+        for (SavingsAccount account : accounts) {
+            if (accountNumber == account.getAccountNr()) {
+                return account;
+            }
+        }
+        return null;
+    }
+
+    public boolean removeAccount(int accountNumber) {
+        for (SavingsAccount account : accounts) {
+            if (accountNumber == account.getAccountNr()) {
+                accounts.remove(account);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String toString(){
+        return ("Namn: " + name + "\n" + "Personnummer: " + pNr + "\n" + "Konton: " + accounts);
+    }
 
 }
